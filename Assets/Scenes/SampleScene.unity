@@ -383,9 +383,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'NumPad Enter: Saves
+  m_text: 'UpArrow: Saves
 
-    NumPad 0: Load
+    DownArrow: Load
 
     Backspace: decrement health
 
@@ -513,6 +513,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6236af9785912964aad3ccd2ce56ddf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GM: {fileID: 2039266413}
+  Player: {fileID: 1405092447}
 --- !u!1 &503612773
 GameObject:
   m_ObjectHideFlags: 0
@@ -2550,13 +2552,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 1405092447}
-  UIManager: {fileID: 0}
+  UIManager: {fileID: 804305640}
   health: 100
   xp: 0
   score: 0
   level: 0
   playerPos: {x: 0, y: 0, z: 0}
   shield: 100
+  scene: 
 --- !u!4 &2039266415
 Transform:
   m_ObjectHideFlags: 0

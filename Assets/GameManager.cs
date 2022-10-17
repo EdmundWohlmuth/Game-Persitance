@@ -4,6 +4,7 @@ using UnityEngine;
 using System;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class GameManager : MonoBehaviour
     public float level = 0;
     public Vector3 playerPos;
     public float shield = 100;
+    public string scene;
 
     private void Awake()
     {
@@ -44,6 +46,7 @@ public class GameManager : MonoBehaviour
 
     public void SaveGame()
     {
+        Debug.Log("Saving Game at : " + Application.persistentDataPath + "/playerInfo.dat");
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Create(Application.persistentDataPath + "/playerInfo.dat"); //creates file path
 
@@ -52,8 +55,9 @@ public class GameManager : MonoBehaviour
         data.xp = xp;
         data.score = score;
         data.level = level;
-        data.playerPos = player.position;
+        //data.playerPos = player.position;
         data.shield = shield;
+        //data.scene = scene;
 
         bf.Serialize(file, data); // writes to file
         file.Close();
@@ -63,6 +67,7 @@ public class GameManager : MonoBehaviour
     {
         if (File.Exists(Application.persistentDataPath + "/playerInfo.dat"))
         {
+            Debug.Log("Loading");
             BinaryFormatter bf = new BinaryFormatter();
             FileStream file = File.Open(Application.persistentDataPath + "/playerInfo.dat", FileMode.Open);
             PlayerData data = (PlayerData)bf.Deserialize(file);
@@ -72,9 +77,11 @@ public class GameManager : MonoBehaviour
             xp = data.xp;
             score = data.score;
             level = data.level;
-            player.position = data.playerPos;
+            //player.position = data.playerPos;
             shield = data.shield;
+            //scene = data.scene;
         }
+        Debug.Log("No File Found at: " + Application.persistentDataPath + "/playerInfo.dat");
     }
 
     [Serializable]
@@ -84,7 +91,8 @@ public class GameManager : MonoBehaviour
         public float xp;
         public float score;
         public float level;
-        public Vector3 playerPos;
+       // public Vector3 playerPos;
         public float shield;
+        public string scene;
     }
 }

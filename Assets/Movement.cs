@@ -78,12 +78,12 @@ public class Movement : MonoBehaviour
 
     void UIControls()
     {
-        if (Input.GetKey(KeyCode.KeypadEnter))
+        if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             //save
             GM.SaveGame();
         }
-        else if (Input.GetKey(KeyCode.Keypad0))
+        else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             //load
             GM.Load();
