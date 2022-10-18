@@ -17,9 +17,9 @@ public class GameManager : MonoBehaviour
     public float xp = 0;
     public float score = 0;
     public float level = 0;
-    public Vector3 playerPos;
+    //public Vector3 playerPos;
     public float shield = 100;
-    public string scene;
+    //public string scene;
 
     private void Awake()
     {
@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour
 
     public void SaveGame()
     {
-        Debug.Log("Saving Game at : " + Application.persistentDataPath + "/playerInfo.dat");
+        //Debug.Log("Saving Game at : " + Application.persistentDataPath + "/playerInfo.dat");
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Create(Application.persistentDataPath + "/playerInfo.dat"); //creates file path
 
@@ -81,7 +81,6 @@ public class GameManager : MonoBehaviour
             shield = data.shield;
             //scene = data.scene;
         }
-        Debug.Log("No File Found at: " + Application.persistentDataPath + "/playerInfo.dat");
     }
 
     [Serializable]
@@ -93,6 +92,6 @@ public class GameManager : MonoBehaviour
         public float level;
        // public Vector3 playerPos;
         public float shield;
-        public string scene;
+       // public string scene;
     }
 }

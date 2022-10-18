@@ -18,23 +18,23 @@ public class LevelManager : MonoBehaviour
     public void SceneOne()
     {
         SceneManager.LoadScene("SampleScene");
-        GM.scene = "SampleScene";
+       // GM.scene = "SampleScene";
     }
 
     public void SceneTwo()
     {
         SceneManager.LoadScene("Level2");
-        GM.scene = "Level2";
+       // GM.scene = "Level2";
     }
 
     public void SceneThree()
     {
         SceneManager.LoadScene("Level3");
-        GM.scene = "Level3";
+        //GM.scene = "Level3";
     }
 
     public void LoadScene()
     {
-        SceneManager.LoadScene(GM.scene);
+       // SceneManager.LoadScene(GM.scene);
     }
 }

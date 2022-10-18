@@ -102,21 +102,22 @@ public class Movement : MonoBehaviour
                     GM.shield = 0;
                 }
             }
-            shield.text = "Shield: " + GM.shield.ToString();
-            health.text = "Health: " + GM.health.ToString();
         }
         else if (Input.GetKeyDown(KeyCode.Equals))
         {
             //incriment xp
             GM.xp += 5;
-            xp.text = "XP: " + GM.xp.ToString();
             if (GM.xp > levelUpAmmount)
             {
                 GM.level++;
                 levelUpAmmount += 15;
-                level.text = "Level: " + GM.level.ToString();
             }
         }
+
+        shield.text = "Shield: " + GM.shield.ToString();
+        health.text = "Health: " + GM.health.ToString();
+        xp.text = "XP: " + GM.xp.ToString();
+        level.text = "Level: " + GM.level.ToString();
 
     }
 }
